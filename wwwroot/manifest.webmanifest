@@ -1,11 +1,11 @@
 {
-  "name": "nerd",
-  "short_name": "nerd",
+  "name": "謹賀新年",
+  "short_name": "謹賀新年",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#03173d",
+  "background_color": "#F0F0F0",
+  "theme_color": "#F0F0F0",
   "prefer_related_applications": false,
   "icons": [
     {
