@@ -1,0 +1,11 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    </Found>
+    <NotFound>
+        <PageTitle>見つかりません</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">該当のページはありません</p>
+        </LayoutView>
+    </NotFound>
+</Router>

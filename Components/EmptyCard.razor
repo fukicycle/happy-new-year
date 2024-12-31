@@ -1,0 +1,29 @@
+﻿@using nerd.Models
+@inject NavigationManager NavigationManager
+<div class="container">
+    <EditForm Model="@_form" OnValidSubmit="@OnValidSubmit" class="card">
+        <DataAnnotationsValidator />
+        <div>宛名</div>
+        <InputText @bind-Value=@_form.Name />
+        <ValidationMessage For="@(() => _form.Name)" />
+        <div>メッセージ</div>
+        <InputTextArea @bind-Value=@_form.Message />
+        <ValidationMessage For="@(() => _form.Message)" />
+        <div>あなたの名前</div>
+        <InputText @bind-Value=@_form.SenderName />
+        <ValidationMessage For="@(() => _form.SenderName)" />
+        <button type="submit" class="btn">決定</button>
+    </EditForm>
+</div>
+@code {
+    private InputTargetNameForm _form = new InputTargetNameForm();
+
+    private void OnValidSubmit()
+    {
+        Dictionary<string, object?> values = new Dictionary<string, object?>();
+        values.Add(nameof(_form.Name), HttpUtility.UrlEncode(_form.Name, System.Text.Encoding.UTF8));
+        values.Add(nameof(_form.Message), HttpUtility.UrlEncode(_form.Message, System.Text.Encoding.UTF8));
+        values.Add(nameof(_form.SenderName), HttpUtility.UrlEncode(_form.SenderName, System.Text.Encoding.UTF8));
+        NavigationManager.NavigateTo(NavigationManager.GetUriWithQueryParameters(values));
+    }
+}

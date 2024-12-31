@@ -1,0 +1,73 @@
+html,
+body {
+    font-family: "M PLUS Rounded 1c", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+html,
+body,
+#app {
+    height: 100%;
+    font-size: clamp(12px, 3vw, 24px);
+}
+
+#app {
+    display: flex;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-white: #F5F5F5;
+    --color-red: #B22222;
+    --color-black: #1A1A1A;
+}
+
+.btn {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .25);
+}
+
+.h1 {
+    font-size: 1.5em;
+}
+
+input {
+    border: solid 1px var(--color-red);
+    outline: none;
+    padding: 4px;
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    border-radius: 4px;
+}
+
+textarea {
+    border: solid 1px var(--color-red);
+    outline: none;
+    padding: 4px;
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}

@@ -1,0 +1,30 @@
+﻿<div class="container">
+    <div class="card">
+        <img class="head-img" src="imgs/akeome.png" />
+        <div class="content">
+            <div class="message">
+                <div class="main">
+                    <div class="wareki">@_wareki</div>
+                    <div>@Message</div>
+                </div>
+                <div class="sender">@SenderName</div>
+            </div>
+            <img src="imgs/hebi.png" />
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public string Message { get; set; } = string.Empty;
+    [Parameter]
+    public string SenderName { get; set; } = string.Empty;
+
+    private string _wareki = string.Empty;
+    protected override void OnInitialized()
+    {
+        CultureInfo cultureInfo = CultureInfo.CreateSpecificCulture("ja-JP");
+        cultureInfo.DateTimeFormat.Calendar = new JapaneseCalendar();
+        _wareki = $"{cultureInfo.Calendar.GetYear(DateTime.Now)}年元旦";
+    }
+
+}

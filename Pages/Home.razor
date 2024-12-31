@@ -1,0 +1,33 @@
+﻿@page "/"
+@if (string.IsNullOrEmpty(Name))
+{
+    <PageTitle>ようこそ</PageTitle>
+    <EmptyCard />
+}
+else
+{
+    <PageTitle>謹賀新年 - @_name</PageTitle>
+    <NewYearsCard Message="@_message" SenderName="@_senderName" />
+}
+@code {
+    [SupplyParameterFromQuery]
+    public string Name { get; set; } = string.Empty;
+    [SupplyParameterFromQuery]
+    public string Message { get; set; } = string.Empty;
+    [SupplyParameterFromQuery]
+    public string SenderName { get; set; } = string.Empty;
+
+    private string _name = string.Empty;
+    private string _message = string.Empty;
+    private string _senderName = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Message) && !string.IsNullOrEmpty(SenderName))
+        {
+            _name = HttpUtility.UrlDecode(Name, System.Text.Encoding.UTF8) ?? "宛名の取得に失敗しました。";
+            _message = HttpUtility.UrlDecode(Message, System.Text.Encoding.UTF8) ?? "メッセージの取得に失敗しました。";
+            _senderName = HttpUtility.UrlDecode(SenderName, System.Text.Encoding.UTF8) ?? "差出人の取得に失敗しました。";
+        }
+    }
+}

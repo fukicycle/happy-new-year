@@ -1,0 +1,18 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::deep .card {
+    padding: 32px;
+    max-width: 800px;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 4px rgba(0, 0, 0, .25);
+}
