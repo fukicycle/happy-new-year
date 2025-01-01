@@ -1,0 +1,130 @@
+/* /Components/Dialog.razor.rz.scp.css */
+.dialog-wrapper[b-j6khle8g6o] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .25);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-container[b-j6khle8g6o] {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 240px;
+    max-width: 560px;
+    box-shadow: 0 16px 32px 8px rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    background-color: var(--color-white);
+}
+
+.dialog-header[b-j6khle8g6o] {
+    border-radius: 8px 8px 0 0;
+    padding: 16px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.dialog-content[b-j6khle8g6o] {
+    padding: 32px;
+    padding-bottom: 0;
+}
+
+.dialog-action[b-j6khle8g6o] {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px;
+}
+
+.dialog-action>.btn[b-j6khle8g6o] {
+    width: 100px;
+    font-size: 12px;
+}
+/* /Components/EmptyCard.razor.rz.scp.css */
+.container[b-vvo19eupf7] {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[b-vvo19eupf7] .card {
+    padding: 32px;
+    max-width: 800px;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 4px rgba(0, 0, 0, .25);
+}
+/* /Components/NewYearsCard.razor.rz.scp.css */
+.container[b-8eodaifkwp] {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4vw;
+    position: relative;
+}
+
+.card[b-8eodaifkwp] {
+    box-shadow: 0 8px 16px 4px rgba(0, 0, 0, .25);
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 1.41/1;
+    display: grid;
+    grid-template-rows: 65% 35%;
+}
+
+.content[b-8eodaifkwp] {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20%;
+    align-items: baseline;
+}
+
+img[b-8eodaifkwp] {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.message[b-8eodaifkwp] {
+    height: 100%;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.sender[b-8eodaifkwp] {
+    text-align: right;
+}
+
+.action[b-8eodaifkwp] {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn[b-8eodaifkwp] {
+    width: clamp(140px, 40vw, 360px);
+}
+/* /Layout/MainLayout.razor.rz.scp.css */
+main[b-fvtcdzae1d] {
+    flex: 1;
+}
