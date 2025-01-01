@@ -72,3 +72,27 @@ textarea {
     height: 100%;
     border-radius: 4px;
 }
+
+.main-loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-loader {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-loader>img {
+    width: 48px;
+    height: 48px;
+}
