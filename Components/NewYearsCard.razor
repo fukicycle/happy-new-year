@@ -1,4 +1,6 @@
-﻿<div class="container">
+﻿@inject NavigationManager NavigationManager
+@inject ClipboardService ClipboardService
+<div class="container">
     <div class="card">
         <img class="head-img" src="imgs/akeome.png" />
         <div class="content">
@@ -12,7 +14,12 @@
             <img src="imgs/hebi.png" />
         </div>
     </div>
+    <div class="action">
+        <button class="btn" @onclick=@ShareButtonOnClick>共有する</button>
+        <button class="btn" @onclick=@CreateButtonOnClick>作成する</button>
+    </div>
 </div>
+<Dialog @ref=@_ref />
 @code {
     [Parameter]
     public string Message { get; set; } = string.Empty;
@@ -20,11 +27,24 @@
     public string SenderName { get; set; } = string.Empty;
 
     private string _wareki = string.Empty;
+    private Dialog _ref = null!;
     protected override void OnInitialized()
     {
         CultureInfo cultureInfo = CultureInfo.CreateSpecificCulture("ja-JP");
         cultureInfo.DateTimeFormat.Calendar = new JapaneseCalendar();
         _wareki = $"{cultureInfo.Calendar.GetYear(DateTime.Now)}年元旦";
+    }
+
+    private async Task ShareButtonOnClick()
+    {
+        await ClipboardService.CopyToClipboardAsync(NavigationManager.Uri.ToString());
+        await _ref.ShowAsync("完了", "共有用のURLをコピーしました。このURLを貼り付けて共有できます。");
+
+    }
+
+    private void CreateButtonOnClick()
+    {
+        NavigationManager.NavigateTo("");
     }
 
 }
